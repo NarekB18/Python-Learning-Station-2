@@ -1,6 +1,7 @@
 import random
 def result():
     goalnumbers = [4,5,6,8,9,10]
+    craps = [2,3,12]
     goalnumber = 0
     while True:
         dice1 = random.randint(1,6)
@@ -11,10 +12,10 @@ def result():
                 print(f"The sum of dice is {dice1} + {dice2} = {s}")
                 print("You won")
                 break
-        elif s == 12:
-            print(f"The sum of dice is {dice1} + {dice2} = {s}")
-            print("You lost!")
-            break
+            if s in craps:
+                print(f"The sum of dice is {dice1} + {dice2} = {s}")
+                print("You lost!")
+                break
         elif s == goalnumber:
              print(f"The sum of dice is {dice1} + {dice2} = {s}")
              print("You won")
